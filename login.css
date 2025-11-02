@@ -33,7 +33,7 @@ body {
   
 
 .form-box {
-  background: rgba(255, 255, 255, 0.15);
+  
   backdrop-filter: blur(12px);
   padding: 40px;
   border-radius: 20px;
@@ -41,6 +41,23 @@ body {
   box-shadow: 0 0 25px rgba(175, 17, 114, 0.138);
   text-align: center;
   animation: fadeInUp 0.8s ease forwards;
+
+   /* 💖 Stable gradient background (always visible, no white flash) */
+   background: linear-gradient(145deg, #ff8ac873, #ff5fa291);
+      
+   /* Blur + transparency */
+   -webkit-backdrop-filter: blur(10px);
+   backdrop-filter: blur(10px);
+ 
+   padding: 15px;
+   border-radius: 15px;
+   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+   transition: all 0.3s ease;
+ 
+   /* 🔒 Safari stability */
+   isolation: isolate;
+   transform: translateZ(0);
+   will-change: background, filter;
 }
 
 h1 {

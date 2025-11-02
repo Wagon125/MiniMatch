@@ -141,7 +141,7 @@
         margin-top: 15px;
       
         /* 💖 Stable gradient background (always visible, no white flash) */
-        background: linear-gradient(145deg, #ff8ac9, #ff5fa3);
+        background: linear-gradient(145deg, #ff8ac873, #ff5fa3);
       
         /* Blur + transparency */
         -webkit-backdrop-filter: blur(10px);
