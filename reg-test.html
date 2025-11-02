@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Match Registration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" /> <!-- reuse your dashboard CSS for consistent style -->
+</head>
+<body>
+  <div class="dashboard">
+    <h2>Create Your Account ❤️</h2>
+
+    <form class="profile-form" id="registerForm">
+      <label><i data-lucide="user"></i> Name</label>
+      <input type="text" id="username" placeholder="Enter your name" required>
+
+      <label><i data-lucide="mail"></i> Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label><i data-lucide="lock"></i> Password</label>
+      <input type="password" id="password" placeholder="Enter a password" required>
+
+      <label><i data-lucide="user"></i> Gender</label>
+      <select id="gender" required>
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label><i data-lucide="heart"></i> Interests</label>
+      <input type="text" id="interests" placeholder="E.g., music, coding, hiking" required>
+
+      <label><i data-lucide="user-check"></i> Looking for</label>
+      <select id="lookingFor" required>
+        <option value="">Select Option</option>
+        <option value="friendship">Friendship</option>
+        <option value="relationship">Relationship</option>
+        <option value="fun">Fun</option>
+      </select>
+
+      <button type="submit"><i data-lucide="user-plus"></i> Register</button>
+    </form>
+
+    <p style="text-align:center; margin-top:15px;">Already have an account? <a href="login.html" style="color:#fff; text-decoration:underline;">Login here</a></p>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+
+    const registerForm = document.getElementById('registerForm');
+
+    registerForm.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const username = document.getElementById('username').value.trim();
+      const email = document.getElementById('email').value.trim().toLowerCase();
+      const password = document.getElementById('password').value.trim();
+      const gender = document.getElementById('gender').value;
+      const interests = document.getElementById('interests').value.split(',').map(i => i.trim());
+      const lookingFor = document.getElementById('lookingFor').value;
+
+      if (!username || !email || !password || !gender || interests.length === 0 || !lookingFor) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+
+      // Check if user already exists
+      if (users.some(u => u.email === email)) {
+        alert("Email already registered. Please login.");
+        return;
+      }
+
+      const newUser = { username, email, password, gender, interests, lookingFor };
+      users.push(newUser);
+      localStorage.setItem('users', JSON.stringify(users));
+      localStorage.setItem('currentUser', JSON.stringify(newUser));
+
+      alert("Registration successful! 🎉");
+      window.location.href = "dashboard.html"; // redirect to dashboard
+    });
+  </script>
+</body>
+</html>

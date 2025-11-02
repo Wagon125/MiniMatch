@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(120deg, #ff7eb3, #ff758c, #ff7eb3);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+  
+  .dashboard {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    animation: fadeInUp 1s ease;
+  }
+  
+  @keyframes fadeInUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: formSlide 1s ease-in-out;
+  }
+  
+  @keyframes formSlide {
+    0% { transform: translateX(-30px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+  
+  label {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  input, select {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    width: 100%;
+    font-size: 15px;
+    transition: 0.3s ease;
+  }
+  
+  input:focus, select:focus {
+    box-shadow: 0 0 10px #fff;
+    transform: scale(1.02);
+  }
+  
+  button {
+    margin-top: 10px;
+    background: #fff;
+    color: #ff5b84;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  
+  button:hover {
+    background: #ff5b84;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255,255,255,0.3);
+  }
+  
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .fade-in {
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  .match-status {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 500;
+    animation: fadeInUp 1s ease;
+  }
+  
+  @media (max-width: 600px) {
+    .dashboard { padding: 20px; }
+    button { font-size: 14px; }
+  }
+
+  
+    .subtitle {
+        opacity: 0.85;
+        margin-bottom: 25px;
+        text-align: center;
+      }
+
+      h3 {
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+      
+      /* INTERESTS SECTION */
+.interests {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 12px;
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px;
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .interests label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .interests label:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  }
+  
+  /* Hide default checkbox */
+  .interests input[type="checkbox"] {
+    display: none;
+  }
+  
+  /* Selected (checked) style */
+  .interests input[type="checkbox"]:checked + label,
+  .interests label:has(input[type="checkbox"]:checked) {
+    background: #ff5b84;
+    color: #fff;
+    box-shadow: 0 0 12px rgba(255, 91, 132, 0.8);
+    transform: scale(1.08);
+  }
+  

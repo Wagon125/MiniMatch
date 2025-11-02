@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Match Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="dashboard.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo"><i data-lucide="heart"></i> MiniMatch</div>
+    <div class="nav-links">
+      <a href="dashboard.html" class="nav-item active"><i data-lucide="home"></i> <span>Dashboard</span></a>
+      <a href="matches.html" class="nav-item"><i data-lucide="users"></i> <span>Matches</span></a>
+      <a href="messages.html" class="nav-item"><i data-lucide="message-circle"></i> <span>Messages</span></a>
+      <a href="settings.html" class="nav-item"><i data-lucide="settings"></i> <span>Settings</span></a>
+      <a href="login.html" class="nav-item logout"><i data-lucide="log-out"></i> <span>Logout</span></a>
+    </div>
+  </aside>
+  
+
+  <main class="main">
+    <div class="header">
+      <h2>Welcome back, Wâgòn 💫</h2>
+      <div class="user-info">
+        <img src="https://i.pravatar.cc/150?img=47" alt="User">
+        <span>Wâgòn</span>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <img src="https://i.pravatar.cc/150?img=32" alt="Match">
+        <h3>Alex</h3>
+        <p>Music, Travel, Coding</p>
+        <div class="compatibility">💖 88% Match</div>
+        <button><i data-lucide="message-circle"></i> Chat</button>
+      </div>
+
+      <div class="card">
+        <img src="https://i.pravatar.cc/150?img=45" alt="Match">
+        <h3>Riley</h3>
+        <p>Photography, Fitness, Tech</p>
+        <div class="compatibility">💞 82% Match</div>
+        <button><i data-lucide="message-circle"></i> Chat</button>
+      </div>
+
+      <div class="card">
+        <img src="https://i.pravatar.cc/150?img=29" alt="Match">
+        <h3>Sam</h3>
+        <p>Gaming, Art, Nature</p>
+        <div class="compatibility">💘 90% Match</div>
+        <button><i data-lucide="message-circle"></i> Chat</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

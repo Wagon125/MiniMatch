@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Match Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="rest.css">
+</head>
+<body>
+
+  <div class="dashboard">
+    <h2>Create your MiniMatch Account ❤️</h2>
+    <p class="subtitle">Sign up and find people who share your vibe 💫</p>
+    
+    <form class="profile-form" id="matchForm">
+        <label><i data-lucide="user"></i> Name</label>
+        <input type="text" placeholder="Enter your name" required>
+      
+        <label><i data-lucide="mail"></i> Email</label>
+        <input type="email" placeholder="Enter your email" required>
+      
+        <label><i data-lucide="heart"></i> Password</label>
+        <input type="password" placeholder="Enter a Password" required>
+      
+        <label><i data-lucide="map-pin"></i> Location</label>
+        <input type="text" placeholder="Your city or region" required>
+      
+        <label><i data-lucide="user-check"></i> Gender</label>
+        <select required>
+          <option value="">Select gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      
+        <label><i data-lucide="user-check"></i> Looking for</label>
+        <select required>
+          <option value="">Choose one</option>
+          <option value="friendship">Friendship</option>
+          <option value="relationship">Relationship</option>
+          <option value="fun">Fun</option>
+        </select>
+      
+        <h3>Select up to 5 interests</h3>
+        <div class="interests">
+          <label><input type="checkbox" value="Music"> 🎵 Music</label>
+          <label><input type="checkbox" value="Movies"> 🎬 Movies</label>
+          <label><input type="checkbox" value="Gaming"> 🎮 Gaming</label>
+          <label><input type="checkbox" value="Sports"> ⚽ Sports</label>
+          <label><input type="checkbox" value="Coding"> 💻 Coding</label>
+          <label><input type="checkbox" value="Art"> 🎨 Art</label>
+          <label><input type="checkbox" value="Travel"> 🌍 Travel</label>
+          <label><input type="checkbox" value="Fashion"> 👗 Fashion</label>
+          <label><input type="checkbox" value="Cooking"> 🍳 Cooking</label>
+          <label><input type="checkbox" value="Others">Others...</label>
+        </div>
+      
+        <p class="match-status"></p>
+        <button type="submit" class="glow-btn">Sign Up 💞</button>
+      </form>
+      
+
+    <p class="login-text">Already have an account? <a href="login.html">Login here</a></p>
+</div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="rest.js"></script>
+</body>
+</html>

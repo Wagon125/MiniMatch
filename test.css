@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: white;
+  }
+  
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .form-box {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 0 25px rgba(255,102,196,0.3);
+    text-align: center;
+    animation: fadeInUp 0.8s ease forwards;
+  }
+  
+  h1 {
+    color: #ff66c4;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    opacity: 0.85;
+    margin-bottom: 25px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin-bottom: 25px;
+    font-size: 1rem;
+  }
+  
+  h3 {
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  
+  .interests {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 25px;
+    text-align: left;
+  }
+  
+  label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.08);
+    padding: 8px 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  label:hover {
+    background: rgba(255,102,196,0.2);
+  }
+  
+  .glow-btn {
+    background: linear-gradient(120deg, #ff66c4, #7597de);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+  
+  .glow-btn:hover {
+    box-shadow: 0 0 20px #ff66c4;
+    transform: scale(1.05);
+  }
+  
+  .login-text {
+    margin-top: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .login-text a {
+    color: #ff66c4;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .login-text a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Animation */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  

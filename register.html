@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account | MiniMatch 💞</title>
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <h1>Create Your MiniMatch Account</h1>
+      <p class="subtitle">Sign up and find people who share your vibe 💫</p>
+
+      <form id="registerForm">
+        <input type="text" id="username" placeholder="Full name" required>
+        <input type="email" id="email" placeholder="Email address" required>
+        <input type="password" id="password" placeholder="Password" required>
+
+        <select id="gender" required>
+            <option value="" disabled selected>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+          
+
+        <h3>Select up to 5 interests</h3>
+        <div class="interests">
+          <label><input type="checkbox" value="Music"> Music</label>
+          <label><input type="checkbox" value="Movies"> Movies</label>
+          <label><input type="checkbox" value="Gaming"> Gaming</label>
+          <label><input type="checkbox" value="Sports"> Sports</label>
+          <label><input type="checkbox" value="Coding"> Coding</label>
+          <label><input type="checkbox" value="Art"> Art</label>
+          <label><input type="checkbox" value="Travel"> Travel</label>
+          <label><input type="checkbox" value="Books"> Books</label>
+          <label><input type="checkbox" value="Cooking"> Cooking</label>
+          <label><input type="checkbox" value="Fashion"> Fashion</label>
+        </div>
+
+        <button type="submit" class="glow-btn">Sign Up 💞</button>
+      </form>
+
+      <p class="login-text">Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+  </div>
+
+  <script src="register.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniMatch | Matches</title>
+  <link rel="stylesheet" href="matches.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="logo"><i data-lucide="heart"></i> MiniMatch</div>
+    <div class="nav-links">
+      <a href="dashboard.html" class="nav-item"><i data-lucide="home"></i> <span>Dashboard</span></a>
+      <a href="matches.html" class="nav-item active"><i data-lucide="users"></i> <span>Matches</span></a>
+      <a href="messages.html" class="nav-item"><i data-lucide="message-circle"></i> <span>Messages</span></a>
+      <a href="settings.html" class="nav-item"><i data-lucide="settings"></i> <span>Settings</span></a>
+      <div class="nav-item logout"><i data-lucide="log-out"></i> <span>Logout</span></div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="header">
+      <h2>💞 Your Matches</h2>
+      <div class="user-info">
+        <img src="https://via.placeholder.com/40" class="profile-pic" id="profilePicHeader">
+        <span id="userNameDisplay"></span>
+      </div>
+    </header>
+
+    <section class="matches-container" id="matchesContainer">
+      <p class="no-matches">Looking for your perfect match... 💫</p>
+    </section>
+  </main>
+
+  <script src="matches.js"></script>
+</body>
+</html>

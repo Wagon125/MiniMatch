@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Match Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/lucide-icons@latest/dist/umd/lucide.min.js" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #ff7eb3, #ff758c, #ff7eb3);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+    }
+
+    .dashboard {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      color: #fff;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      0% { transform: translateY(30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    h2 {
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .profile-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      animation: formSlide 1s ease-in-out;
+    }
+
+    @keyframes formSlide {
+      0% { transform: translateX(-30px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    label {
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    input, select {
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      width: 100%;
+      font-size: 15px;
+      transition: 0.3s ease;
+    }
+
+    input:focus, select:focus {
+      box-shadow: 0 0 10px #fff;
+      transform: scale(1.02);
+    }
+
+    button {
+      margin-top: 10px;
+      background: #fff;
+      color: #ff5b84;
+      border: none;
+      padding: 12px;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    button:hover {
+      background: #ff5b84;
+      color: #fff;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255,255,255,0.3);
+    }
+
+    .icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .match-status {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: 500;
+      animation: fadeInUp 1s ease;
+    }
+
+    @media (max-width: 600px) {
+      .dashboard { padding: 20px; }
+      button { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dashboard">
+    <h2>Welcome Back, Wâgøn ❤️</h2>
+
+    <form class="profile-form">
+      <label><i data-lucide="user"></i> Name</label>
+      <input type="text" placeholder="Enter your name" required>
+
+      <label><i data-lucide="heart"></i> Interests</label>
+      <input type="text" placeholder="E.g., music, coding, hiking">
+
+      <label><i data-lucide="map-pin"></i> Location</label>
+      <input type="text" placeholder="Your city or region">
+
+      <label><i data-lucide="user-check"></i> Looking for</label>
+      <select>
+        <option value="friendship">Friendship</option>
+        <option value="relationship">Relationship</option>
+        <option value="fun">Fun</option>
+      </select>
+
+      <button type="submit"><i data-lucide="sparkles"></i> Find My Match</button>
+    </form>
+
+    <div class="match-status"></div>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+
+    const form = document.querySelector('.profile-form');
+    const status = document.querySelector('.match-status');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      status.textContent = "✨ Finding your perfect match...";
+      status.classList.add('fade-in');
+
+      setTimeout(() => {
+        status.textContent = "💞 You’re 85% compatible with Alex!";
+      }, 2500);
+    });
+  </script>
+</body>
+</html>

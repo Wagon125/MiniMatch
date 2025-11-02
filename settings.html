@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Match Settings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="settings.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <header class="settings-header">
+    <button class="back-btn" onclick="window.location.href='dashboard.html'">
+      <i data-lucide="arrow-left"></i>
+    </button>
+    <h2>Settings</h2>
+  </header>
+
+  <main class="settings-container">
+    <section class="profile-section">
+      <div class="profile-pic">
+        <img id="profileImage" src="https://i.pravatar.cc/150?img=47" alt="Profile Picture">
+        <label for="uploadPic" class="upload-icon">
+          <i data-lucide="camera"></i>
+        </label>
+        <input type="file" id="uploadPic" accept="image/*" hidden>
+      </div>
+      <h3 id="userNameDisplay">User</h3>
+    </section>
+
+    <form id="settingsForm">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" id="nameInput" placeholder="Enter new name">
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="emailInput" placeholder="Enter new email">
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="passwordInput" placeholder="Enter new password">
+      </div>
+
+      <div class="form-group collapsible">
+        <div class="collapsible-header">
+          <span>Interests</span>
+          <i data-lucide="chevron-down"></i>
+        </div>
+        <div class="collapsible-content">
+          <div class="interests">
+            <label><input type="checkbox" value="Music"> Music</label>
+            <label><input type="checkbox" value="Travel"> Travel</label>
+            <label><input type="checkbox" value="Gaming"> Gaming</label>
+            <label><input type="checkbox" value="Art"> Art</label>
+            <label><input type="checkbox" value="Tech"> Tech</label>
+            <label><input type="checkbox" value="Fitness"> Fitness</label>
+            <label><input type="checkbox" value="Cooking"> Cooking</label>
+            <label><input type="checkbox" value="Photography"> Photography</label>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="save-btn">💾 Save Changes</button>
+    </form>
+
+    <p class="update-status"></p>
+  </main>
+
+  <script src="settings.js"></script>
+</body>
+</html>

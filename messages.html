@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Messages | Mini Match</title>
+  <link rel="stylesheet" href="messages.css" />
+</head>
+<body>
+  <div class="messages-container">
+    <!-- Sidebar (Chats list) -->
+    <aside class="chat-sidebar">
+      <div class="chat-header">
+        <h2>Messages</h2>
+      </div>
+      <div class="chat-list" id="chatList">
+        <!-- Chat previews will be loaded here dynamically -->
+      </div>
+    </aside>
+
+    <!-- Chat Area -->
+    <section class="chat-area">
+      <div class="chat-top">
+        <img src="https://via.placeholder.com/40" alt="user" id="chatUserImage">
+        <span id="chatUserName">Select a chat</span>
+      </div>
+      <div class="chat-body" id="chatBody">
+        <p class="no-chat">Select a user to start chatting</p>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="messageInput" placeholder="Type a message..." disabled>
+        <button id="sendBtn" disabled>Send</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
+  <!-- ✅ Firebase setup -->
+  <script type="module">
+   // Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
+import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+
+// ✅ Your Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAH-nxh95DNvp2M2ruDHN40Iz_GD6LlQz0",
+  authDomain: "minimatch-11ec2.firebaseapp.com",
+  projectId: "minimatch-11ec2",
+  storageBucket: "minimatch-11ec2.appspot.com",
+  messagingSenderId: "405933137087",
+  appId: "1:405933137087:web:df21e59f1dabb2660afa0a"
+};
+
+// ✅ Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth();
+
+// ✅ Sign in anonymously for now
+signInAnonymously(auth)
+  .then(() => console.log("✅ Firebase Connected"))
+  .catch((error) => console.error("❌ Firebase Error:", error));
+
+// Make db globally available
+window.firebaseDB = db;
+
+  </script>
+
+  <!-- ✅ Your main chat logic -->
+  <script src="messages.js" type="module"></script>
+</body>
+</html>

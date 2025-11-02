@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #ff7eb3, #ff758c, #ff7eb3);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 1px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  animation: fadeInUp 1s ease;
+  }
+  
+
+.form-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  box-shadow: 0 0 25px rgba(175, 17, 114, 0.138);
+  text-align: center;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+h1 {
+  color: #ff66c4;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  opacity: 0.85;
+  margin-bottom: 25px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.remember-me {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.remember-me label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.glow-btn {
+  background: linear-gradient(120deg, #ff66c4, #7597de);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+
+.glow-btn:hover {
+  box-shadow: 0 0 20px #ff66c4;
+  transform: scale(1.05);
+}
+
+.login-text {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.login-text a {
+  color: #ff66c4;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,167 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #fff;
+    overflow-x: hidden;
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+    z-index: 10;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff66c4;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+  }
+  
+  nav a:hover {
+    color: #ff66c4;
+  }
+  
+  .btn {
+    background: #ff66c4;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: 0.3s;
+  }
+  
+  .btn:hover {
+    background: #ff85d8;
+  }
+  
+  .hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    background: linear-gradient(120deg, #2b1055, #7597de);
+    color: white;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease forwards;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+  }
+  
+  .cta-btn {
+    background: #ff66c4;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-btn:hover {
+    background: #ff85d8;
+    box-shadow: 0 0 20px #ff66c4;
+  }
+  
+  /* Sections */
+  section {
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .about p, .how p {
+    max-width: 700px;
+    margin: 15px auto;
+    opacity: 0.85;
+  }
+  
+  .steps {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .step {
+    background: rgba(255,255,255,0.1);
+    padding: 25px;
+    border-radius: 15px;
+    width: 250px;
+    transition: 0.3s;
+  }
+  
+  .step span {
+    display: inline-block;
+    font-size: 2rem;
+    background: #ff66c4;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(255,102,196,0.4);
+  }
+  
+  .join {
+    background: linear-gradient(120deg, #ff66c4, #7597de);
+    color: white;
+  }
+  
+  .glow {
+    box-shadow: 0 0 25px #fff;
+  }
+  
+  footer {
+    background: rgba(255,255,255,0.05);
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  
