@@ -1,13 +1,4 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyBm-uDAahru6W4kOw0_B9sHGJ9nxHHakY0",
-    authDomain: "mini-match-a3876.firebaseapp.com",
-    projectId: "mini-match-a3876",
-    storageBucket: "mini-match-a3876.firebasestorage.app",
-    messagingSenderId: "440513555610",
-    appId: "1:440513555610:web:73d36153a5ef15a1fc4323"
-  };
-
-// Example dummy data — will be replaced by Firebase later
+// Example user data (replace later with Firebase)
 const users = [
     { id: 1, name: "Sarah Johnson", image: "https://i.pravatar.cc/150?img=47", lastMessage: "Hey there!" },
     { id: 2, name: "Michael Lee", image: "https://i.pravatar.cc/150?img=12", lastMessage: "How was your day?" },
@@ -39,7 +30,7 @@ const users = [
     chatList.appendChild(chatItem);
   });
   
-  // Open chat with a user
+  // Open chat
   function openChat(user) {
     currentChat = user;
     chatUserName.textContent = user.name;
@@ -50,9 +41,17 @@ const users = [
   
     const chatMessages = messages[user.id] || [];
     chatMessages.forEach(msg => displayMessage(msg.text, msg.type));
+  
+    // ✅ Mobile: slide chat area in
+    document.getElementById("chatArea").classList.add("active");
   }
   
-  // Display messages
+  // Back button for mobile
+  document.getElementById("backBtn").addEventListener("click", () => {
+    document.getElementById("chatArea").classList.remove("active");
+  });
+  
+  // Display message
   function displayMessage(text, type) {
     const msg = document.createElement("div");
     msg.classList.add("message", type);
@@ -67,8 +66,6 @@ const users = [
     if (!text || !currentChat) return;
   
     displayMessage(text, "sent");
-  
-    // Save message
     if (!messages[currentChat.id]) messages[currentChat.id] = [];
     messages[currentChat.id].push({ text, type: "sent" });
   
@@ -82,3 +79,25 @@ const users = [
     }, 1000);
   });
   
+  // Image Zoom Feature
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".image-modal .close");
+
+// Target all profile pictures (in chat list & header)
+const allProfilePics = document.querySelectorAll(".profile-pic, .chat-profile");
+
+allProfilePics.forEach(pic => {
+  pic.addEventListener("click", () => {
+    modal.style.display = "flex";
+    modalImg.src = pic.src;
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === modal) modal.style.display = "none";
+});
