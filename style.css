@@ -165,3 +165,85 @@
     to {opacity: 1; transform: translateY(0);}
   }
   
+  /* 🔹 Responsive Fix — Keep Nav Side by Side on Mobile */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    overflow-x: auto; /* allows slight horizontal scroll if needed */
+    white-space: nowrap;
+    scrollbar-width: none; /* hide scrollbar on Firefox */
+  }
+
+  nav ul::-webkit-scrollbar {
+    display: none; /* hide scrollbar on Chrome/Safari */
+  }
+
+  nav a {
+    font-size: 0.85rem;
+    padding: 5px 8px;
+  }
+
+  .btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    border-radius: 15px;
+    flex-shrink: 0;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 90px 15px 50px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    max-width: 90%;
+  }
+
+  .cta-btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 8px 10px;
+    gap: 5px;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  nav ul {
+    gap: 8px;
+  }
+
+  nav a {
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+}

@@ -28,7 +28,7 @@ const storedUser = localStorage.getItem('miniMatchUser');
 if (storedUser) {
   const user = JSON.parse(storedUser);
   const username = user.name || 'User';
-  const userImage = user.profilePic || 'https://i.pravatar.cc/150?img=47'; // ✅ Added fallback
+  const userImage = user.profilePic || ''; // ✅ Added fallback
 
   // Replace static name in the header and sidebar
   const welcomeText = document.querySelector('.header h2');
@@ -39,8 +39,8 @@ if (storedUser) {
     welcomeText.innerHTML = `Welcome back, ${username} 💫`;
   }
 
-  userNameSpans.forEach(span => {
-    span.textContent = username;
+  userNameSpans.forEach(span => {  
+    span.textContent = username;                
   });
 
   // ✅ Update user image everywhere

@@ -22,6 +22,6 @@ form.addEventListener('submit', (e) => {
     sessionStorage.setItem('currentUser', JSON.stringify(validUser));
   }
 
-  alert(`Welcome back, ${validUser.username}! 💞`);
+  alert(`Welcome back, ${validUser.name}! 💞`);
   window.location.href = 'dashboard.html';
 });

@@ -49,20 +49,38 @@ form.addEventListener('submit', (e) => {
   // Get basic info
   const name = form.querySelector('input[type="text"]').value.trim();
   const email = form.querySelector('input[type="email"]').value.trim();
+  const password = form.querySelector('input[type="password"]').value.trim();
 
-  if (!name || !email) {
+  if (!name || !email || !password) {
     alert('Please fill in all required fields.');
     spinner.style.display = 'none';
     return;
   }
 
-  // Store user data
+  // Create user object
   const user = {
     name,
-    email,
+    email: email.toLowerCase(),
+    password,
     interests: [...checkboxes].filter(cb => cb.checked).map(cb => cb.value),
   };
-  localStorage.setItem('miniMatchUser', JSON.stringify(user));
+
+  // Retrieve existing users or create new array
+  const users = JSON.parse(localStorage.getItem('users')) || [];
+
+  // Prevent duplicate registrations
+  if (users.some(u => u.email === user.email)) {
+    alert('This email is already registered. Try logging in.');
+    spinner.style.display = 'none';
+    return;
+  }
+
+  // Add new user and save to localStorage
+  users.push(user);
+  localStorage.setItem('users', JSON.stringify(users));
+
+  // Optionally save the current user session
+  localStorage.setItem('currentUser', JSON.stringify(user));
 
   // Simulate short delay before redirect
   setTimeout(() => {
